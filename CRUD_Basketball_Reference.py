@@ -18,8 +18,8 @@ app.config[
 
 db = flask_sqlalchemy.SQLAlchemy(app)
 
-path = os.getcwd() + '/logs/'
-logging.basicConfig(filename= path + 'CRUD_log', level=logging.INFO, format='%(levelname)s - %(datetime.datetime.now())s - %(message)s')
+log_path = os.getcwd() + '/logs/'
+logging.basicConfig(filename= log_path + 'CRUD_log', level=logging.INFO, format='%(levelname)s - %(datetime.datetime.now())s - %(message)s')
 
 
 def create_schedule(start_year=datetime.date.today().year, end_year=None):
@@ -1153,7 +1153,7 @@ if __name__ == '__main__':
     with app.app_context():
         while 1:
             try:
-                update_pbp() # 35802 @ 5:55 PM 1/9
+                update_pbp() 
             except:
                 pass
             try:
